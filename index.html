@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Megarieltor — Эксперт рынка недвижимости в Ташкенте</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Верхняя информационная полоса -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="topbar__item">📍 г. Ташкент, Мирзо-Улугбекский район, ул. Олой, 23</span>
+      </div>
+      <div class="topbar__right">
+        <a href="tel:+998339000339" class="topbar__item topbar__phone">📞 +998 339-000-339</a>
+        <a href="mailto:megarieltors@gmail.com" class="topbar__item">✉ megarieltors@gmail.com</a>
+        <a href="https://t.me/megarieltor" target="_blank" class="topbar__item">✈ @megarieltor</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__mark">M</span>
+        <span class="logo__text">MEGARIELTOR</span>
+      </a>
+      <nav class="nav">
+        <a href="#catalog" class="nav__link">Каталог</a>
+        <a href="#team" class="nav__link">Команда</a>
+        <a href="#news" class="nav__link">Новости</a>
+        <a href="#contacts" class="nav__link">Контакты</a>
+      </nav>
+      <div class="header__actions">
+        <a href="tel:+998339000339" class="header__phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span>+998 339-000-339</span>
+        </a>
+        <button class="favorites-btn" id="favoritesBtn">
+          <span>Избранное</span>
+          <span class="favorites-count" id="favoritesCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <span class="hero__tag">Эксперт рынка недвижимости</span>
+      <h1 class="hero__title">Элитная недвижимость<br>в Ташкенте</h1>
+      <p class="hero__subtitle">Подберём идеальный дом, квартиру или коммерческое помещение в лучших районах города</p>
+      <div class="hero__search">
+        <input type="text" id="heroSearch" placeholder="Поиск по району или названию...">
+        <button id="heroSearchBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          Найти
+        </button>
+      </div>
+      <div class="hero__stats">
+        <div class="hero__stat"><strong>250+</strong><span>объектов</span></div>
+        <div class="hero__stat"><strong>12</strong><span>лет опыта</span></div>
+        <div class="hero__stat"><strong>1 800+</strong><span>клиентов</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="featured">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Выбор редакции</span>
+        <h2 class="section-title">Предложение недели</h2>
+      </div>
+      <div class="featured-card" id="featuredCard"></div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Каталог</span>
+        <h2 class="section-title">Найдите свой идеальный дом</h2>
+      </div>
+      <div class="filters">
+        <select id="filterType">
+          <option value="all">Все типы</option>
+          <option value="apartment">Квартиры</option>
+          <option value="house">Дома</option>
+          <option value="commercial">Коммерческая</option>
+        </select>
+        <select id="filterDistrict">
+          <option value="all">Все районы</option>
+          <option value="Мирзо-Улугбекский">Мирзо-Улугбекский</option>
+          <option value="Юнусабадский">Юнусабадский</option>
+          <option value="Яккасарайский">Яккасарайский</option>
+          <option value="Шайхантахурский">Шайхантахурский</option>
+        </select>
+        <select id="filterPrice">
+          <option value="all">Любая цена</option>
+          <option value="0-500000">до 500 000 $</option>
+          <option value="500000-1000000">500 000 – 1 000 000 $</option>
+          <option value="1000000-2000000">1 000 000 – 2 000 000 $</option>
+          <option value="2000000+">от 2 000 000 $</option>
+        </select>
+        <button id="resetFilters">Сбросить</button>
+      </div>
+      <div class="catalog-grid" id="catalogGrid"></div>
+      <p class="no-results" id="noResults" style="display:none;">Ничего не найдено</p>
+    </div>
+  </section>
+
+  <section class="team" id="team">
+    <div class="container">
+      <div class="section-head section-head--center">
+        <span class="section-head__tag">Команда</span>
+        <h2 class="section-title">Люди, которым доверяют</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-card__photo" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop')"></div>
+          <h3>Азиз Каримов</h3>
+          <p>Основатель, эксперт по элитной недвижимости</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop')"></div>
+          <h3>Дилноза Рахимова</h3>
+          <p>Руководитель отдела продаж</p>
+        </div>
+        <div class="team-card">
+          <div class="team-card__photo" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop')"></div>
+          <h3>Тимур Ахмедов</h3>
+          <p>Специалист по коммерческой недвижимости</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="news" id="news">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-head__tag">Блог</span>
+        <h2 class="section-title">Новости и аналитика</h2>
+      </div>
+      <div class="news-grid">
+        <article class="news-card">
+          <div class="news-card__image" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop')"></div>
+          <div class="news-card__content">
+            <span class="news-card__date">15 октября 2026</span>
+            <h3>Рынок элитной недвижимости Ташкента: итоги третьего квартала</h3>
+            <p>Спрос на премиальное жильё вырос на 18% по сравнению с прошлым годом...</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-card__image" style="background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=250&fit=crop')"></div>
+          <div class="news-card__content">
+            <span class="news-card__date">8 октября 2026</span>
+            <h3>Новый жилой комплекс в Мирзо-Улугбекском районе</h3>
+            <p>Стартовали продажи в клубном доме на 24 квартиры с панорамными видами...</p>
+          </div>
+        </article>
+        <article class="news-card">
+          <div class="news-card__image" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=250&fit=crop')"></div>
+          <div class="news-card__content">
+            <span class="news-card__date">1 октября 2026</span>
+            <h3>Как выбрать коммерческое помещение для ресторана</h3>
+            <p>Разбираем ключевые критерии: локация, трафик, планировка...</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="contacts" id="contacts">
+    <div class="container">
+      <div class="section-head section-head--light">
+        <span class="section-head__tag">Контакты</span>
+        <h2 class="section-title">Свяжитесь с нами</h2>
+      </div>
+      <div class="contacts__inner">
+        <div class="contacts__info">
+          <a href="tel:+998339000339" class="contacts__card contacts__card--phone">
+            <div class="contacts__card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <span>Позвоните нам</span>
+              <strong>+998 339-000-339</strong>
+            </div>
+          </a>
+          <a href="https://t.me/megarieltor" target="_blank" class="contacts__card">
+            <div class="contacts__card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </div>
+            <div>
+              <span>Telegram</span>
+              <strong>@megarieltor</strong>
+            </div>
+          </a>
+          <a href="mailto:megarieltors@gmail.com" class="contacts__card">
+            <div class="contacts__card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
+            </div>
+            <div>
+              <span>Email</span>
+              <strong>megarieltors@gmail.com</strong>
+            </div>
+          </a>
+          <div class="contacts__card contacts__card--static">
+            <div class="contacts__card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span>Офис</span>
+              <strong>г. Ташкент, Мирзо-Улугбекский район, ул. Олой, 23</strong>
+            </div>
+          </div>
+        </div>
+        <form class="contacts__form" id="contactForm">
+          <h3>Оставьте заявку</h3>
+          <p>Наш эксперт свяжется с вами в течение 15 минут</p>
+          <input type="text" name="name" id="formName" placeholder="Ваше имя" required>
+          <input type="tel" name="phone" id="formPhone" placeholder="Телефон" required>
+          <textarea name="message" id="formMessage" placeholder="Сообщение" rows="4"></textarea>
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a href="#" class="logo logo--footer">
+          <span class="logo__mark">M</span>
+          <span class="logo__text">MEGARIELTOR</span>
+        </a>
+        <p>Эксперт рынка недвижимости в Ташкенте</p>
+      </div>
+      <div class="footer__links">
+        <a href="tel:+998339000339">+998 339-000-339</a>
+        <a href="https://t.me/megarieltor" target="_blank">Telegram</a>
+        <a href="mailto:megarieltors@gmail.com">Email</a>
+      </div>
+      <p class="footer__copy">© 2026 Megarieltor. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <!-- Плавающая кнопка звонка -->
+  <a href="tel:+998339000339" class="call-float" aria-label="Позвонить">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>+998 339-000-339</span>
+  </a>
+
+  <div class="modal" id="propertyModal">
+    <div class="modal__overlay" id="modalOverlay"></div>
+    <div class="modal__content">
+      <button class="modal__close" id="modalClose">&times;</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
